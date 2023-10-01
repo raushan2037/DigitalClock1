@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth:wght@700&family=Mitr:wght@300;400;500&family=Open+Sans:wght@700;800&family=Roboto+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Digital clock</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #8ecae6;
+       font-family: 'Open Sans', sans-serif;
+      
+    }
+
+    .main {
+        /* position: fixed; */
+        width: 100%;
+        height: 48px;
+        background-color: #FCCB06;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon img {
+        width: 25px;
+        height: 25px;
+        margin-left: 20px;
+        align-items: center;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .text h1 {
+        color: #fff;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+        margin-left: 470px;
+        margin-top: -38px;
+        font-size: 33px;
+    }
+    .image1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .clock{
+    width: 550px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -570px;
+    margin-left: 312px;
+    column-gap: 5px;
+    cursor: pointer;
+   
+    }
+    .clock div{
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0, 0.3);
+    letter-spacing: 2px;
+    box-shadow: 0 12px 10px -4px #222;
+    
+    
+}
+.clock span{
+    font-weight: bolder;
+    font-size: 50px;
+    margin-top: -10px;
+    color: #222;
+}
+.pass{
+    width: 255px;
+    height: 161px;
+    background-color: #CBD6E2;
+    margin-left: 459px;
+    margin-top: -155px;
+    z-index: 1;
+    border: 2px solid black;
+}
+.copy p{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+        
+        height: 20px;
+    }
+    
+
+    .main {
+        /* position: fixed; */
+        height: 50px;
+    }
+    .icon img {
+        width: 30px;
+        height: 30px;
+        margin-left: 20px;
+        align-items: center;
+        margin-top: 11px;
+        cursor: pointer;
+    }
+  
+    .text h1 {
+        margin-left: 104px;
+        margin-top: -40px;
+        font-size: 25px;
+    }
+    .clock{
+    width: 200px;
+    height: 150px;
+    margin-top: -590px;
+    margin-left: 0px;
+    column-gap: 2px;
+    z-index: 1;
+   
+   
+    }
+    .clock div{
+    width: 37px;
+    height: 37px;
+    font-size: 20px;
+    border-radius: 5px;
+    
+    
+}
+.clock span{
+    font-weight: bolder;
+    font-size: 40px;
+}
+.pass{
+    width: 165px;
+    height: 165px;
+    margin-left: 9px;
+    margin-top: -160px;
+    border: 2px solid black;
+}
+.image1{
+    margin-top: 70px;
+    margin-left: -20px;
+}
+.image1 img{
+    width: 285px;
+    height: 600px;
+}
+.copy p{
+    display: block;
+    color: white;
+    font-size: 10px;
+    text-shadow: 2px 2px #222;
+  
+}
+.copy{
+    margin-top: 410px;
+    margin-left: 90px;
+
+}
+
+
+
+}
+   
+</style>
+
+<body>
+    <header class="main">
+        <div class="icon">
+            <img src="images/menu_1828859.png" alt="">
+        </div>
+
+        <div class="text">
+            <h1>DIGITAL CLOCK</h1>
+
+        </div>
+        <div class="image1">
+            <img src="images/cartoon.png" alt="">
+
+        </div>
+        
+    <div class="clock">
+        <div id="hour">00</div>
+        <span>:</span>
+        <div id="minute">00</div>
+        <span>:</span>
+        <div id="seconds">00</div>
+
+    </div>
+    <div class="pass">
+
+    </div>
+    <div class="copy">
+        <p>Copyright 2023-2030 by Raushan</p>
+    </div>
+
+    </header>
+
+</body>
+<script>
+     const hour = document.getElementById('hour');
+    const minute = document.getElementById('minute');
+    const seconds = document.getElementById('seconds');
+
+    const clock = setInterval(function time(){
+        let d = new Date();
+        let h = d.getHours();
+        let m = d.getMinutes();
+        let s = d.getSeconds();
+        let d1 = d.getDate();
+
+        if(h<10){
+            h= '0'+ h;
+        }
+        if(m<10){
+            m='0'+ m;
+        }
+        if(s<10){
+            s= '0' + s;
+        }
+        hour.textContent = h;
+        minute.textContent = m;
+        seconds.textContent = s;
+
+
+        }, 1000);
+</script>
+
+</html>
